@@ -46,7 +46,7 @@ public class ValidationItemControllerV2 {
     }
 
     @PostMapping("/add")
-    public String addItem(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+    public String addItemV1(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
         //store the validation error
         //Map<String, String> errors = new HashMap<>();
 
@@ -74,9 +74,9 @@ public class ValidationItemControllerV2 {
         }
 
         //검증에 실패하면 다시 입력 폼으로
-        if (!errors.isEmpty()) {
-            log.info("errors = {} ",errors);
-            model.addAttribute("errors", errors);
+        if (bindingResult.hasErrors()) {
+            log.info("errors = {} ",bindingResult);
+            //model.addAttribute("errors", errors);
             return "validation/v2/addForm";
         }
 

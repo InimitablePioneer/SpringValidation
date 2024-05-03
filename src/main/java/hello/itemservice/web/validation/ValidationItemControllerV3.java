@@ -42,7 +42,7 @@ public class ValidationItemControllerV3 {
 
     @GetMapping("/{itemId}")
     public String item(@PathVariable long itemId, Model model) {
-        Item item = itemRepository.findById(itemId);
+         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
         return "validation/v3/item";
     }

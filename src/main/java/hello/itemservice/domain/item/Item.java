@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Data
-@ScriptAssert(lang = "javascript", script = "_this.price*_this.quantity >= 10000", message = "만원 넘겨야됨 ㅇㅇ")
+//@ScriptAssert(lang = "javascript", script = "_this.price*_this.quantity >= 10000", message = "만원 넘겨야됨 ㅇㅇ")
 public class Item {
 
     private Long id;
